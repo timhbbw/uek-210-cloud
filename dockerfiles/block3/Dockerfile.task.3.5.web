@@ -1,0 +1,4 @@
+# Dockerfile erstellen:
+FROM python:3.11-alpine
+FROM nginx:alpine
+COPY Block3/3.5/app/python-web/ /usr/share/nginx/html
