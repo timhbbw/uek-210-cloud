@@ -1,0 +1,9 @@
+# Dockerfile erstellen:
+FROM python:3.11-alpine
+WORKDIR /app
+RUN pip install --no-cache-dir flask
+COPY Block3/3.5/app/file-reader/app.py .
+# data.txt wird beim Build ins Image "gebrannt"
+COPY Block3/3.5/app/file-reader/data.txt /data/data.txt
+EXPOSE 8080
+CMD ["python", "app.py"]

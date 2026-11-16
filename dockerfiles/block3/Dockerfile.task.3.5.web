@@ -1,4 +1,7 @@
 # Dockerfile erstellen:
 FROM python:3.11-alpine
-FROM nginx:alpine
-COPY Block3/3.5/app/python-web/ /usr/share/nginx/html
+WORKDIR /app
+RUN pip install --no-cache-dir flask
+COPY Block3/3.5/app/python-web/app.py .
+EXPOSE 8080
+CMD ["python", "app.py"]
