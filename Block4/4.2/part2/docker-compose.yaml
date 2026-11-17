@@ -1,0 +1,10 @@
+services:
+  web:
+    build:
+      context: ../../..
+      dockerfile: dockerfiles/block3/Dockerfile.task.3.4.2
+    ports:
+      - "${APP_PORT}:80"
+
+  nginx:
+    image: nginx:alpine

@@ -1,0 +1,8 @@
+# Dockerfile erstellen:
+FROM nginx:alpine
+
+WORKDIR /code
+
+EXPOSE 5000
+
+COPY Block3/3.4/ /usr/share/nginx/html
