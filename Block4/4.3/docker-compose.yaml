@@ -1,0 +1,40 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: development
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - frontnet
+    
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: development
+    depends_on:
+      - mongo
+    networks:
+      - backnet
+      - frontnet
+
+  mongo:
+    image: mongo:8.3.4
+    volumes:
+      - data:/data/db
+    networks:
+      - backnet
+
+networks:
+  frontnet:
+    driver: bridge
+  backnet:
+    driver: bridge
+
+volumes:
+  data:
+  
