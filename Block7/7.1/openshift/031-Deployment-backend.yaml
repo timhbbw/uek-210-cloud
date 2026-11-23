@@ -4,7 +4,7 @@ metadata:
   name: quotes-backend
   labels:
     app: quotes-backend
-    app.kubernetes.io/part-of: quotes-backend
+    app.kubernetes.io/part-of: quotes
 spec:
   replicas: 1
   selector:

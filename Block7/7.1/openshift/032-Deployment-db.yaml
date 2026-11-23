@@ -4,7 +4,7 @@ metadata:
   name: quotesdb
   labels:
     app: quotesdb
-    app.kubernetes.io/part-of: quotesdb
+    app.kubernetes.io/part-of: quotes
 spec:
   selector:
     matchLabels:
@@ -26,8 +26,6 @@ spec:
               key: password
         image: mariadb
         resources:
-          # explicit CPU request; otherwise it defaults to the limit (500m)
-          # and breaks APPUiO's memory/CPU fair use ratio
           requests:
             memory: "512Mi"
             cpu: "50m"

@@ -4,7 +4,7 @@ metadata:
   name: quotesdb
   labels:
     app: quotesdb
-    app.kubernetes.io/part-of: quotesdb
+    app.kubernetes.io/part-of: quotes
 spec:
   selector:
     app: quotesdb
