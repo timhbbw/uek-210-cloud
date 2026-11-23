@@ -11,3 +11,6 @@ spec:
   to:
     kind: Service
     name: quotes-backend
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
