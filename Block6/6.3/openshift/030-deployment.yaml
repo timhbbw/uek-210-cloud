@@ -19,5 +19,9 @@ spec:
       containers:
         - name: web-app
           image: ghcr.io/timhbbw/html-openshift-app:v1
-          resources: {}
+          resources:
+            limits:
+              memory: 300Mi
+            requests:
+              memory: 200Mi
           imagePullPolicy: Always
