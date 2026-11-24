@@ -1,0 +1,28 @@
+---
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2
+metadata:
+  name: devops-backend-hpa
+  labels:
+    app: devops-backend
+    app.kubernetes.io/part-of: devops
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: devops-backend
+    apiVersion: apps/v1
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 80
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 80
