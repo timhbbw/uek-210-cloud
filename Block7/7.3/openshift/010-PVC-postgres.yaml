@@ -1,0 +1,15 @@
+---
+apiversion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgresvolume
+  labels:
+    app: devopsdb
+    app.kubernetes.io/part-of: devops
+spec:
+  resources:
+    requests:
+      storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
