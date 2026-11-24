@@ -2,10 +2,10 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
+  name: quotes-frontend
   labels:
     app: quotes-frontend
     app.kubernetes.io/part-of: quotes
-  name: quotes-frontend
 spec:
   port:
     targetPort: 3000-tcp
