@@ -1,0 +1,17 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: devops-frontend-route
+  labels:
+    app: devops-frontend
+    app.kubernetes.io/part-of: devops
+spec:
+  to:
+    kind: Service
+    name: devops-frontend-svc
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

@@ -1,10 +1,10 @@
 ---
-apiversion: v1
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: postgresvolume
   labels:
-    app: devopsdb
+    app: devops-db
     app.kubernetes.io/part-of: devops
 spec:
   resources:
